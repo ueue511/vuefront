@@ -5,12 +5,12 @@ import axios from "axios";
 export default {
   //メニューリストのresponse処理 axios.all使用
   testPosting() {
-  return axios.all([Api().get("https://ancient-earth-61569.herokuapp.com//menulist"), Api().get("https://ancient-earth-61569.herokuapp.com//menuimg")]);
+  return axios.all([Api().get("https://ancient-earth-61569.herokuapp.com/menulist"), Api().get("https://ancient-earth-61569.herokuapp.com/menuimg")]);
 },
 
   //管理画面adminsterのメニューlist
   AdminsterList() {
-      return Api().get("https://ancient-earth-61569.herokuapp.com//adminster");
+      return Api().get("https://ancient-earth-61569.herokuapp.com/adminster");
   },
 
   //新規注文メニュー
@@ -20,7 +20,7 @@ export default {
     formData.append("menu", menu_all)
     formData.append("file", file)
     // console.log(...formData.entries())
-    return Api().post("https://ancient-earth-61569.herokuapp.com//adminsternew", formData, {
+    return Api().post("https://ancient-earth-61569.herokuapp.com/adminsternew", formData, {
         headers: {
             "Accept": "application/json",
             "Content-Type": "multipart/form-data",
@@ -35,7 +35,7 @@ export default {
     formData.append("menu", menu_all)
     formData.append("file", file)
     // console.log(...formData.entries())
-    return Api().post("https://ancient-earth-61569.herokuapp.com//adminsteradd", formData, {
+    return Api().post("https://ancient-earth-61569.herokuapp.com/adminsteradd", formData, {
         headers: {
             "Accept": "application/json",
             "Content-Type": "multipart/form-data",
@@ -49,7 +49,7 @@ export default {
     const menu_all = menu
     formData.append("menu", menu_all)
     // console.log(...formData.entries())
-    return Api().post("https://ancient-earth-61569.herokuapp.com//adminsteradd", formData, {
+    return Api().post("https://ancient-earth-61569.herokuapp.com/adminsteradd", formData, {
         headers: {
             "Accept": "application/json",
             "Content-Type": "multipart/form-data",
@@ -63,7 +63,7 @@ export default {
     const formData = new FormData();
     formData.append("id", deletemenu)
     // console.log(...formData.entries())
-    return Api().post("https://ancient-earth-61569.herokuapp.com//adminsterdelete", formData, {
+    return Api().post("https://ancient-earth-61569.herokuapp.com/adminsterdelete", formData, {
       headers: {
         "Accept": "application/json",
         "Content-Type": "multipart/form-data",
@@ -76,7 +76,7 @@ export default {
     const formData = new FormData();
     formData.append("login", logindata);
     // console.log(...formData.entries());
-    return Api().post("https://ancient-earth-61569.herokuapp.com//loginuser", formData, {
+    return Api().post("https://ancient-earth-61569.herokuapp.com/loginuser", formData, {
       headers: {
         "Accept": "application/json",
         "Content-Type": "multipart/form-data",
